@@ -31,6 +31,7 @@ router.route('/')
             lat = parseFloat(lat_str);
             lon = parseFloat(lon_str);
             rayon = parseFloat(rayon_str);
+            console.log("Has args => : " + lat + " " + lon + " " + rayon);
         }
 
         Travaux.find({}, function(err, travs) {
