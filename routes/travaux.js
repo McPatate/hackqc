@@ -20,14 +20,18 @@ router.route('/')
             return R * c; // Distance in km
         }
 
-        var lat = req.query.lat;
-        var lon = req.query.lon;
-        var rayon = req.query.rayon;
+        var lat_str = req.query.lat;
+        var lon_str = req.query.lon;
+        var rayon_str = req.query.rayon;
         var check = false;
+        var lat = 0, lon = 0, rayon = 0;
 
-        console.log(lat, lon, rayon);
-        if (lat && lon && rayon)
+        if (lat_str && lon_str && rayon_str) {
             check = true;
+            lat = parseFloat(lat_str);
+            lon = parseFloat(lon_str);
+            rayon = parseFloat(rayon_str);
+        }
 
         Travaux.find({}, function(err, travs) {
             var travMap = [];
