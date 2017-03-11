@@ -31,7 +31,7 @@ router.route('/')
             var travMap = [];
             var i = 0;
             travs.forEach(function(trav) {
-                if (!check || distance(trav.lat, trav.lon, lat, lon) <= rayon)
+                if (!check || (check && distance(trav.lat, trav.lon, lat, lon) <= rayon))
                     travMap.push(trav);
             });
             res.status(200).send(travMap);
