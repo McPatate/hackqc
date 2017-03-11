@@ -10,10 +10,10 @@ router.route('/')
         var rayon = req.query.rayon;
 
         Travaux.find({}, function(err, travs) {
-            var travMap = {};
+            var travMap = [];
             var i = 0;
             travs.forEach(function(trav) {
-                travMap[i++] = trav;
+                travMap.push(trav);
             });
             res.status(200).send(travMap);
         });
