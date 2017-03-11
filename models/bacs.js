@@ -5,10 +5,11 @@ var bcrypt   = require('bcrypt-nodejs');
 var bacsSchema = mongoose.Schema({
 
     position                : {
-        long                : String,
+        lon                 : String,
         lat                 : String
     },
-    rdy                     : Boolean
+    rdy                     : Boolean,
+    name                    : { type : String, unique : true }
 });
 
 // methods ======================

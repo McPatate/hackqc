@@ -14,6 +14,8 @@ var db            = require('./config/db');
 
 var app = express();
 
+mongoose.connect(db.url);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

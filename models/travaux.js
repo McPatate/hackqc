@@ -5,10 +5,11 @@ var bcrypt   = require('bcrypt-nodejs');
 var travauxSchema = mongoose.Schema({
 
     position                : {
-        long                : String,
+        lon                 : String,
         lat                 : String
     },
-    rdy                     : Boolean
+    busy                    : Boolean,
+    date                    : Date
 });
 
 // methods ======================
