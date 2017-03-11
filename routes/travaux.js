@@ -25,6 +25,7 @@ router.route('/')
         var rayon = req.query.rayon;
         var check = false;
 
+        console.log(lat, lon, rayon);
         if (lat && lon && rayon)
             check = true;
 
