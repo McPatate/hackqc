@@ -30,7 +30,6 @@ var j = schedule.scheduleJob('* * * * * *', function(){
               rawData += chunk
           });
           res.on('end', function () {
-            console.log("In END");
               try {
                   parser.parseString(rawData, function (err, result) {
                       var array = [];
