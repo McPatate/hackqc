@@ -10,7 +10,8 @@ var xml2js        = require('xml2js');
 
 var index         = require('./routes/index');
 var users         = require('./routes/users');
-var bacs         = require('./routes/bacs');
+var bacs          = require('./routes/bacs');
+var travaux       = require("./routes/travaux");
 
 var db            = require('./config/db');
 var Travaux       = require('./models/travaux');
@@ -74,6 +75,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/bacs', bacs);
+app.use('/travaux', travaux);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
