@@ -5,10 +5,10 @@ var Bacs = require('../models/bacs');
 router.route('/')
     .get(function(req, res, next) {
         Bacs.find({}, function (err, bacs) {
-            var bacMap = {};
+            var bacMap = [];
             var i = 0;
             bacs.forEach(function(bac) {
-                bacMap[i++] = bac;
+                bacMap.push(bac);
             });
             res.status(200).send(bacMap);
         });
