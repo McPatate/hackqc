@@ -15,7 +15,7 @@
     "less-middleware": "~2.2.0",
     "mongoose": "^4.8.6",
     "morgan": "~1.7.0",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
     "node-schedule": "^1.2.0",
     "serve-favicon": "~2.3.0"
   }
