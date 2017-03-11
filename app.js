@@ -21,7 +21,8 @@ var app = express();
 //insert crone
 var schedule = require('node-schedule');
 
-var j = schedule.scheduleJob('* * * * * *', function(){
+var j = schedule.scheduleJob('* * * *', function(){
+    console.log("HELLO");
   var parser = new xml2js.Parser();
   http.get("http://www.quebec511.info/donneespubliques/entraves.ashx?format=xml", function (res)  {
       if (res.statusCode == 200) {
