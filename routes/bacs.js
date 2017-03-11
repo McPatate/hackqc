@@ -6,8 +6,9 @@ router.route('/')
     .get(function(req, res, next) {
         Bacs.find({}, function (err, bacs) {
             var bacMap = {};
+            var i = 0;
             bacs.forEach(function(bac) {
-                bacMap[bac._id] = bac;
+                bacMap[i++] = bac;
             });
             res.status(200).send(bacMap);
         });
