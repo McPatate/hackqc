@@ -8,8 +8,9 @@ var travauxSchema = mongoose.Schema({
         lon                 : String,
         lat                 : String
     },
-    busy                    : Boolean,
-    date                    : Date
+    isMaj                   : Boolean,
+    debut                   : Date,
+    fin                     : Date
 });
 
 // methods ======================
