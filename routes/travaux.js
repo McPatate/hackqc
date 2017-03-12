@@ -18,22 +18,24 @@ router.route('/')
             return tmp;
         }
 
-        var lat = req.query.lat;
-        var lon = req.query.lon;
+        var lat_str = req.query.lat;
+        var lon_str = req.query.lon;
         var rayon_str = req.query.rayon;
         var check = false;
-        var rayon = 0;
+        var lat = 0, lon = 0, rayon = 0;
 
-        if (lat && lon && rayon_str) {
+        if (lat_str && lon_str && rayon_str) {
             check = true;
             rayon = parseFloat(rayon_str);
+            lat = parseInt(lat_str);
+            lon = parseInt(lon_str);
         }
 
         Travaux.find({}, function(err, travs) {
             var travMap = [];
             var i = 0;
             travs.forEach(function(trav) {
-                if (!check || (check && distance(trav.position.lat, trav.position.lon, lat, lon) <= rayon))
+                if (!check || (check && distance(trav.position.lat, trav.position.lon, parseInt(lat), parseInt(lon)) <= rayon))
                     travMap.push(trav);
             });
             res.status(200).send(travMap);
