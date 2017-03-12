@@ -10,6 +10,7 @@ router.route('/')
 
         function distance(lat1, lon1, lat2, lon2)
         {
+            console.log(lat1, lon1, lat2, lon2);
             var tmp  = geolib.getDistanceSimple(
                 {latitude: lat1, longitude: lon1},
                 {latitude: lat2, longitude: lon2}
