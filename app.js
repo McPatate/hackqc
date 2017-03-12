@@ -37,7 +37,7 @@ var j = schedule.scheduleJob('* * * * *', function(){
                       var array = [];
                       result.chantiers.chantier.forEach(function (el) {
                           array.push({
-                            position: {lat: el.Latitude[0], lon: el.Longitude[0]},
+                            position: {lat: el.Latitude[0].replace(',', '.'), lon: el.Longitude[0].replace(',', '.')},
                               isMaj: (el.EntraveType[0]).startsWith("majeure"),
                               debut: new Date(el.Debut[0]),
                               fin: new Date(el.Fin[0])
