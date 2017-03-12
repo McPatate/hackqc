@@ -16,7 +16,7 @@ router.route('/')
                 Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
                 Math.sin(dLon/2) * Math.sin(dLon/2);
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-            console.log("distance => :", R * c);
+            console.log("distance => :", R, c, R * c);
             return R * c; // Distance in km
         }
 
