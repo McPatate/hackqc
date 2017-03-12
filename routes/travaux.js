@@ -27,6 +27,7 @@ router.route('/')
 
         if (lat_str && lon_str && rayon_str) {
             check = true;
+            console.log(lat_str, lon_str);
             rayon = parseFloat(rayon_str);
             lat = parseFloat(lat_str);
             lon = parseFloat(lon_str);
