@@ -14,8 +14,7 @@ router.route('/')
         });
     })
     .post(function(req, res, next) {
-        var bac = new Bacs(req.body);
-        bac.save(function (err) {
+        Bacs.findOneAndUpdate({ name : req.body.name }, req.body, {upsert : true}, function (err) {
             if (err) {
                 res.status(500).send('not ok');
                 return console.error(err);
