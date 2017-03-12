@@ -23,7 +23,7 @@ router.route('/')
         var lon_str = req.query.lon;
         var rayon_str = req.query.rayon;
         var check = false;
-        var lat = 0, lon = 0, rayon = 0;
+        var lat = 0.0, lon = 0.0, rayon = 0.0;
 
         if (lat_str && lon_str && rayon_str) {
             check = true;
