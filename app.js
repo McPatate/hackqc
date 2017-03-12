@@ -21,7 +21,8 @@ var app = express();
 //insert crone
 var schedule = require('node-schedule');
 
-var j = schedule.scheduleJob('* * * * * *', function(){
+var j = schedule.scheduleJob('* * * * *', function(){
+    console.log("HELLO");
   var parser = new xml2js.Parser();
   http.get("http://www.quebec511.info/donneespubliques/entraves.ashx?format=xml", function (res)  {
       if (res.statusCode == 200) {
@@ -36,7 +37,7 @@ var j = schedule.scheduleJob('* * * * * *', function(){
                       var array = [];
                       result.chantiers.chantier.forEach(function (el) {
                           array.push({
-                            position: {lat: el.Latitude[0], lon: el.Longitude[0]},
+                            position: {lat: el.Latitude[0].replace(',', '.'), lon: el.Longitude[0].replace(',', '.')},
                               isMaj: (el.EntraveType[0]).startsWith("majeure"),
                               debut: new Date(el.Debut[0]),
                               fin: new Date(el.Fin[0])
