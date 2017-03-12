@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="demoapp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/Leaflet.fullscreen/dist/leaflet.fullscreen.css" />
+    <link rel="stylesheet" href="bower_components/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+    <title>IntelliBac</title>
+    <script>
+
+    </script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body ng-controller="controller">
+<!--leaflet lf-center="userPos" width="100%" height="700px" controls="controls" event-broadcast="events" markers="markers" tiles="tiles"></leaflet-->
+<div id="map"></div>
+</body>
+
+<script src="bower_components/Leaflet.fullscreen/dist/Leaflet.fullscreen.min.js"></script>
+<script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
+<script src="bower_components/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=bbGvk5TuFTwQYUaToHx4k51e0Y7nvwHA"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=bbGvk5TuFTwQYUaToHx4k51e0Y7nvwHA"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script src="js/index.js"></script>
+<script src="js/controller.js"></script>
+<script>
+    var map = L.map('map')
+//            .setView([45.4015582,-71.9633218], 15)
+        ;
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets'
+    }).addTo(map);
+
+    /* var map,
+     dir;
+
+     map = L.map('map', {
+     layers: MQ.mapLayer(),
+     center: [ 45.4215582,-71.9633218],
+     zoom: 15
+     });
+
+     dir = MQ.routing.directions();
+
+     dir.route({
+     locations: [
+     { latLng:{
+     lat: 45.4215582,
+     lng: -71.9633218
+     }},
+     { latLng:{
+     lat: 45.4415582,
+     lng: -71.9633218
+     }} ,
+     { latLng:{
+     lat: 45.3915582,
+     lng: -71.9633218
+     }}        ]
+     });
+
+     map.addLayer(MQ.routing.routeLayer({
+     directions: dir,
+     fitBounds: true
+     }));*/
+</script>
+</html>

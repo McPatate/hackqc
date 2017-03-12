@@ -1,0 +1,13 @@
+{
+  "name": "leaflet-areaselect",
+  "homepage": "https://github.com/heyman/leaflet-areaselect",
+  "_release": "da8905695d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "da8905695db78354ddd5b5d9de6ef13699b9d7a7"
+  },
+  "_source": "https://github.com/heyman/leaflet-areaselect.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/heyman/leaflet-areaselect.git"
+}
